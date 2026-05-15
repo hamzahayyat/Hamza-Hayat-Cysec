@@ -23,7 +23,7 @@ const Navbar = () => {
       <div className="container nav-container">
         <a href="#" className="nav-logo">
           <Shield className="logo-icon" size={28} />
-          <span>Hamza.Sec</span>
+          <span>HamzaHayat.Cysec</span>
         </a>
         
         <div className="nav-toggle" onClick={() => setMenuOpen(!menuOpen)}>

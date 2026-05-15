@@ -22,8 +22,9 @@ function App() {
       <footer id="contact" style={{ textAlign: 'center', padding: '4rem 0', borderTop: '1px solid rgba(255,255,255,0.05)', marginTop: '4rem' }}>
         <h2 style={{ marginBottom: '1rem' }}>Initiate Contact</h2>
         <p style={{ color: 'var(--text-muted)', marginBottom: '2rem' }}>Secure channels are open for collaboration and deployment.</p>
-        <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginBottom: '3rem' }}>
-          <a href={`mailto:${personalInfo.email}`} className="glow-btn">Email: {personalInfo.email}</a>
+        <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginBottom: '3rem', flexWrap: 'wrap' }}>
+          <a href={`mailto:${personalInfo.email}`} className="glow-btn">Email 1: {personalInfo.email}</a>
+          <a href={`mailto:${personalInfo.altEmail}`} className="glow-btn">Email 2: {personalInfo.altEmail}</a>
           <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="glow-btn-outline">LinkedIn Profile</a>
           <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="glow-btn-outline">GitHub Profile</a>
         </div>
