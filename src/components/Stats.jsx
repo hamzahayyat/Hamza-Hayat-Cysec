@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { skills } from '../data';
 import './Stats.css';
 
 const Stats = () => {
+  const [activeTab, setActiveTab] = useState(0);
+
   return (
     <section className="section stats-section" id="skills">
       <div className="container">
@@ -85,13 +87,32 @@ const Stats = () => {
           </div>
         </div>
 
-        <div className="skills-categories">
-          {skills.map((skillGroup, index) => (
-            <div className="card skill-card" key={index}>
-              <h3>{skillGroup.category}</h3>
-              <p>{skillGroup.items}</p>
+        {/* Tabbed Skills UI */}
+        <div className="skills-tab-container">
+          <div className="skills-tabs">
+            {skills.map((skillGroup, index) => (
+              <button 
+                key={index} 
+                className={`skill-tab-btn ${activeTab === index ? 'active' : ''}`}
+                onClick={() => setActiveTab(index)}
+              >
+                {skillGroup.category}
+              </button>
+            ))}
+          </div>
+
+          <div className="skills-content">
+            <h3 style={{ color: 'white', marginBottom: '1.5rem', fontSize: '1.2rem' }}>
+              {skills[activeTab].category}
+            </h3>
+            <div className="skill-chips">
+              {skills[activeTab].items.split(', ').map((item, i) => (
+                <span className="skill-chip" key={i}>
+                  {item}
+                </span>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>

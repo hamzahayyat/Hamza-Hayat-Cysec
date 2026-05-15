@@ -46,10 +46,27 @@
   border: 1px solid rgba(255, 26, 26, 0.3);
 }
 
+.profile-intro-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.profile-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-red);
+  box-shadow: 0 0 15px var(--primary-red-glow);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
 .hero-title {
   font-size: 4rem;
   line-height: 1.1;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   letter-spacing: -1px;
 }
 
@@ -63,6 +80,7 @@
   color: var(--text-muted);
   margin-bottom: 2rem;
   font-weight: 400;
+  margin-top: 1rem;
 }
 
 .hero-desc {
@@ -176,6 +194,11 @@
     text-align: center;
   }
   
+  .profile-intro-wrapper {
+    flex-direction: column;
+    justify-content: center;
+  }
+
   .hero-desc {
     margin: 0 auto 3rem;
   }

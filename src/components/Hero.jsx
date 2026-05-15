@@ -12,10 +12,22 @@ const Hero = () => {
           <div className="badge">
             <Lock size={14} /> SECURITY CLEARANCE: VERIFIED
           </div>
-          <h1 className="hero-title">
-            Cyber Security <br />
-            <span className="text-red">Leaders Unite</span>
-          </h1>
+          
+          <div className="profile-intro-wrapper">
+            {/* Fallback image using ui-avatars. Replace 'profile.jpg' locally when ready */}
+            <img 
+              src="https://ui-avatars.com/api/?name=Hamza+Hayat&background=ff1a1a&color=fff&size=200" 
+              alt="Hamza Hayat" 
+              className="profile-avatar"
+            />
+            <div>
+              <h1 className="hero-title">
+                Cyber Security <br />
+                <span className="text-red">Leaders Unite</span>
+              </h1>
+            </div>
+          </div>
+          
           <h2 className="hero-subtitle">{personalInfo.title}</h2>
           <p className="hero-desc">{personalInfo.summary}</p>
           <div className="hero-actions">
