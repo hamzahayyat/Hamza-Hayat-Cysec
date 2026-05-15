@@ -282,6 +282,10 @@
 }
 
 @media (max-width: 400px) {
+  .profile-avatar {
+    width: 100px;
+    height: 100px;
+  }
   .shield-container {
     width: 250px;
     height: 250px;
@@ -290,4 +294,21 @@
     width: 100px;
     height: 100px;
   }
+}
+
+/* Ensure Cyber Sidebar scales perfectly on mobile */
+@media (max-width: 768px) {
+  .cyber-sidebar {
+    left: 0;
+    width: 25px;
+    gap: 6px;
+    opacity: 0.3; /* Lower opacity to prevent text clashing on small screens */
+  }
+  .cyber-line::before {
+    width: 3px;
+    box-shadow: 0 0 8px var(--primary-red-glow), 0 0 2px white;
+  }
+  .line-1::before { height: 15px; }
+  .line-2::before { height: 25px; }
+  .line-3::before { height: 10px; }
 }

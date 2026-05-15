@@ -24,6 +24,8 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+
   background-image: 
     linear-gradient(rgba(255, 26, 26, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 26, 26, 0.03) 1px, transparent 1px);
