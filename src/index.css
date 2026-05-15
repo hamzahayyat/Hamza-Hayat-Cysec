@@ -24,6 +24,16 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: 
+    linear-gradient(rgba(255, 26, 26, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 26, 26, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: panGrid 20s linear infinite;
+}
+
+@keyframes panGrid {
+  0% { background-position: 0 0; }
+  100% { background-position: 40px 40px; }
 }
 
 h1, h2, h3, h4, h5, h6 {
