@@ -10,19 +10,27 @@
   gap: 1.5rem;
 }
 
+.edu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
 .edu-item h3 {
   font-size: 1.1rem;
+  margin-bottom: 0.2rem;
 }
 
 .edu-meta {
   color: var(--primary-red);
   font-size: 0.85rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0;
 }
 
 .edu-item p {
   color: var(--text-dark);
   font-size: 0.9rem;
+  margin-bottom: 0;
 }
 
 .cert-list {
@@ -42,7 +50,7 @@
   transition: all 0.3s ease;
 }
 
-.cert-item:hover {
+.interactive-card-hover:hover {
   border-color: rgba(255, 26, 26, 0.3);
   transform: translateX(10px);
   background: rgba(255, 26, 26, 0.05);
@@ -56,4 +64,51 @@
 .cert-item span {
   font-size: 0.95rem;
   color: var(--text-main);
+}
+
+/* Shareable expand styles from Projects.css will apply here too, 
+   but we can redefine them specific to Education if needed. */
+.expand-btn-accent {
+  background: rgba(255, 26, 26, 0.1);
+  border: 1px solid rgba(255, 26, 26, 0.2);
+  color: var(--primary-red);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.expand-btn-accent.small {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.interactive-card {
+  cursor: pointer;
+}
+
+.interactive-card:hover .expand-btn-accent {
+  background: var(--primary-red);
+  color: white;
+  box-shadow: 0 0 10px var(--primary-red-glow);
+}
+
+.expandable-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s ease-out, margin-top 0.4s ease-out;
+}
+
+.expandable-content.open {
+  grid-template-rows: 1fr;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.expandable-inner {
+  overflow: hidden;
 }
