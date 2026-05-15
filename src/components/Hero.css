@@ -8,6 +8,52 @@
   justify-content: center;
 }
 
+/* Cyberpunk Vertical Animation */
+.cyber-sidebar {
+  position: absolute;
+  left: 2%;
+  top: 0;
+  height: 100%;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  overflow: hidden;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.cyber-line {
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, rgba(255, 26, 26, 0.2), transparent);
+  position: relative;
+}
+
+.cyber-line::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -2px;
+  width: 6px;
+  height: 40px;
+  background: var(--primary-red);
+  border-radius: 4px;
+  box-shadow: 0 0 15px var(--primary-red-glow), 0 0 5px white;
+  animation: cyberDrop 4s infinite ease-in-out;
+}
+
+.line-1::before { animation-duration: 3s; animation-delay: 0s; height: 30px; }
+.line-2::before { animation-duration: 4.5s; animation-delay: 1.2s; height: 50px; background: white; }
+.line-3::before { animation-duration: 3.8s; animation-delay: 0.5s; height: 20px; }
+
+@keyframes cyberDrop {
+  0% { transform: translateY(-100px); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
 .hero-bg-glow {
   position: absolute;
   top: 50%;

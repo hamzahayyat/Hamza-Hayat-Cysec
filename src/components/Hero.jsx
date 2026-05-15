@@ -7,6 +7,13 @@ import './Hero.css';
 const Hero = () => {
   return (
     <section className="hero" id="about">
+      {/* Cyberpunk Vertical Animation Sidebar */}
+      <div className="cyber-sidebar">
+        <div className="cyber-line line-1"></div>
+        <div className="cyber-line line-2"></div>
+        <div className="cyber-line line-3"></div>
+      </div>
+      
       <div className="hero-bg-glow"></div>
       <div className="container hero-container">
         <div className="hero-content">
