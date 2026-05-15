@@ -33,6 +33,10 @@ function App() {
           <Route path="/projects" element={
             <div style={{ paddingTop: '8rem' }}>
               <Projects />
+            </div>
+          } />
+          <Route path="/education" element={
+            <div style={{ paddingTop: '8rem' }}>
               <Education />
             </div>
           } />
