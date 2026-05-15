@@ -19,6 +19,12 @@
   z-index: -1;
   border-radius: 50%;
   filter: blur(50px);
+  animation: breatheGlow 8s ease-in-out infinite alternate;
+}
+
+@keyframes breatheGlow {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+  100% { transform: translate(-50%, -50%) scale(1.3); opacity: 1; }
 }
 
 .hero-container {
