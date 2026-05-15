@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { skills } from '../data';
 import { ShieldCheck, Crosshair, Cpu } from 'lucide-react';
 import './Stats.css';
 
 const Stats = () => {
-  const [activeTab, setActiveTab] = useState(0);
 
   return (
     <section className="section stats-section" id="skills">
@@ -71,32 +70,18 @@ const Stats = () => {
 
         </div>
 
-        {/* Tabbed Skills UI */}
-        <div className="skills-tab-container">
-          <div className="skills-tabs">
-            {skills.map((skillGroup, index) => (
-              <button 
-                key={index} 
-                className={`skill-tab-btn ${activeTab === index ? 'active' : ''}`}
-                onClick={() => setActiveTab(index)}
-              >
-                {skillGroup.category}
-              </button>
-            ))}
-          </div>
-
-          <div className="skills-content">
-            <h3 style={{ color: 'white', marginBottom: '1.5rem', fontSize: '1.2rem' }}>
-              {skills[activeTab].category} Stack
-            </h3>
-            <div className="skill-chips">
-              {skills[activeTab].items.split(', ').map((item, i) => (
-                <span className="skill-chip" key={i}>
-                  {item}
-                </span>
-              ))}
+        {/* Capabilities Matrix */}
+        <div className="capabilities-matrix">
+          {skills.map((skillGroup, index) => (
+            <div className="matrix-column" key={index}>
+              <h3 className="matrix-title">{skillGroup.category}</h3>
+              <ul className="matrix-list">
+                {skillGroup.items.split(', ').map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
             </div>
-          </div>
+          ))}
         </div>
         
       </div>
