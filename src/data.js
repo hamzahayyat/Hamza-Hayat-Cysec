@@ -5,8 +5,8 @@ export const personalInfo = {
   email: "mmhhmalik@gmail.com",
   altEmail: "hamza.cysec@gmail.com",
   phone: "+92-321-7718572",
-  linkedin: "https://www.linkedin.com/in/hamza-hayat", // Placeholder based on CV
-  github: "https://github.com/hamza-hayat", // Placeholder based on CV
+  linkedin: "https://www.linkedin.com/in/malik-muhammad-hamza-hayat-073b75263/",
+  github: "https://github.com/hamzahayyat",
   summary: "Results-driven Cybersecurity Analyst and Researcher (MS Cybersecurity, FAST-NUCES) with hands-on expertise in penetration testing, vulnerability assessment, SIEM deployment, threat intelligence, and network security. Specializing in Machine Learning-based Intrusion Detection Systems (IDS) for IoT and MQTT networks. Skilled across the full offensive-defensive spectrum - from APT group analysis and STIX-based CTI to FortiGate firewall configuration and Wazuh SIEM deployment. Committed to community impact through active volunteer work with Pakistan Foundation Fighting Blindness (PFFB). Passionate about bridging rigorous academic research with real-world security operations."
 };
 
