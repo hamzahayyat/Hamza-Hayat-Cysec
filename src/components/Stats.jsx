@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { skills } from '../data';
+import { ShieldCheck, Crosshair, Cpu } from 'lucide-react';
 import './Stats.css';
 
 const Stats = () => {
@@ -8,83 +9,66 @@ const Stats = () => {
   return (
     <section className="section stats-section" id="skills">
       <div className="container">
-        <div className="stats-grid">
-          <div className="stats-text">
-            <h2 className="section-title" style={{ textAlign: 'left' }}>
-              Defending at <br/> speed and scale.
-            </h2>
-            <p style={{ color: 'var(--text-dark)', marginBottom: '2rem', maxWidth: '400px' }}>
-              Advanced capabilities across the full offensive-defensive spectrum, powered by rigorous research and real-world operations.
-            </p>
-            
-            <div className="skill-bars">
-              <div className="skill-bar">
-                <div className="skill-info">
-                  <span>Offensive Security</span>
-                  <span>94%</span>
-                </div>
-                <div className="progress-bg">
-                  <div className="progress-fill" style={{ width: '94%' }}></div>
-                </div>
-              </div>
-              <div className="skill-bar">
-                <div className="skill-info">
-                  <span>Defensive Security / SIEM</span>
-                  <span>90%</span>
-                </div>
-                <div className="progress-bg">
-                  <div className="progress-fill" style={{ width: '90%' }}></div>
-                </div>
-              </div>
-              <div className="skill-bar">
-                <div className="skill-info">
-                  <span>ML/AI Security</span>
-                  <span>85%</span>
-                </div>
-                <div className="progress-bg">
-                  <div className="progress-fill" style={{ width: '85%' }}></div>
-                </div>
-              </div>
+        
+        {/* Bento Box Layout */}
+        <div className="bento-grid">
+          
+          <div className="bento-card bento-wide">
+            <div className="bento-header">
+              <ShieldCheck size={40} className="bento-icon" />
+              <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '1rem', fontSize: '2.5rem' }}>
+                Defending at <br/> speed and scale.
+              </h2>
             </div>
+            <p style={{ color: 'var(--text-dark)', maxWidth: '600px', fontSize: '1.1rem' }}>
+              Advanced capabilities across the full offensive-defensive spectrum, powered by rigorous research, real-world operations, and next-generation AI integrations.
+            </p>
           </div>
 
-          <div className="stats-visuals">
-            <div className="circle-stat">
+          <div className="bento-card bento-stat">
+            <div className="bento-stat-top">
+              <Crosshair size={24} className="text-red" />
+              <span className="badge">94% EFFICIENCY</span>
+            </div>
+            <div className="circle-wrapper">
               <svg viewBox="0 0 36 36" className="circular-chart red">
                 <path className="circle-bg"
-                  d="M18 2.0845
-                    a 15.9155 15.9155 0 0 1 0 31.831
-                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
                 />
-                <path className="circle"
-                  strokeDasharray="94, 100"
-                  d="M18 2.0845
-                    a 15.9155 15.9155 0 0 1 0 31.831
-                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                <path className="circle" strokeDasharray="94, 100"
+                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
                 />
                 <text x="18" y="20.35" className="percentage">94%</text>
               </svg>
-              <div className="stat-label">Offensive Mastery</div>
             </div>
+            <div className="stat-info">
+              <h4>Offensive Mastery</h4>
+              <p>Red team operations & penetration testing</p>
+            </div>
+          </div>
 
-            <div className="circle-stat">
+          <div className="bento-card bento-stat">
+            <div className="bento-stat-top">
+              <Cpu size={24} className="text-red" />
+              <span className="badge">78% AUTOMATION</span>
+            </div>
+            <div className="circle-wrapper">
               <svg viewBox="0 0 36 36" className="circular-chart dark-red">
                 <path className="circle-bg"
-                  d="M18 2.0845
-                    a 15.9155 15.9155 0 0 1 0 31.831
-                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
                 />
-                <path className="circle"
-                  strokeDasharray="78, 100"
-                  d="M18 2.0845
-                    a 15.9155 15.9155 0 0 1 0 31.831
-                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                <path className="circle" strokeDasharray="78, 100"
+                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
                 />
                 <text x="18" y="20.35" className="percentage">78%</text>
               </svg>
-              <div className="stat-label">AI/ML Integration</div>
+            </div>
+            <div className="stat-info">
+              <h4>AI/ML Integration</h4>
+              <p>Next-gen IDS and threat detection networks</p>
             </div>
           </div>
+
         </div>
 
         {/* Tabbed Skills UI */}
@@ -103,7 +87,7 @@ const Stats = () => {
 
           <div className="skills-content">
             <h3 style={{ color: 'white', marginBottom: '1.5rem', fontSize: '1.2rem' }}>
-              {skills[activeTab].category}
+              {skills[activeTab].category} Stack
             </h3>
             <div className="skill-chips">
               {skills[activeTab].items.split(', ').map((item, i) => (
@@ -114,6 +98,7 @@ const Stats = () => {
             </div>
           </div>
         </div>
+        
       </div>
     </section>
   );

@@ -54,13 +54,28 @@
 }
 
 .profile-avatar {
-  width: 90px;
-  height: 90px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   border: 2px solid var(--primary-red);
-  box-shadow: 0 0 15px var(--primary-red-glow);
+  box-shadow: 0 0 25px var(--primary-red-glow);
   object-fit: cover;
   flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .profile-avatar {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 400px) {
+  .profile-avatar {
+    width: 100px;
+    height: 100px;
+  }
 }
 
 .hero-title {
