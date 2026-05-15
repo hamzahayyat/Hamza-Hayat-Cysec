@@ -1,21 +1,14 @@
 import React from 'react';
 import { personalInfo } from '../data';
 import { Lock, Server, ShieldAlert } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import profileImg from '../assets/profile.png';
 import './Hero.css';
 
 const Hero = () => {
   return (
     <section className="hero" id="about">
-      {/* Cyberpunk Vertical Animation Sidebar */}
-      <div className="cyber-sidebar">
-        <div className="cyber-line line-1"></div>
-        <div className="cyber-line line-2"></div>
-        <div className="cyber-line line-3"></div>
-      </div>
-      
-      <div className="hero-bg-glow"></div>
-      <div className="container hero-container">
+      <div className="container hero-container" style={{ position: 'relative', zIndex: 10 }}>
         <div className="hero-content">
           <div className="badge">
             <Lock size={14} /> SECURITY CLEARANCE: VERIFIED
@@ -38,8 +31,8 @@ const Hero = () => {
           <h2 className="hero-subtitle">{personalInfo.title}</h2>
           <p className="hero-desc">{personalInfo.summary}</p>
           <div className="hero-actions">
-            <a href="#contact" className="glow-btn">Engage Security</a>
-            <a href="#projects" className="glow-btn-outline">View Operations</a>
+            <Link to="/contact" className="glow-btn">Engage Security</Link>
+            <Link to="/projects" className="glow-btn-outline">View Operations</Link>
           </div>
         </div>
         
