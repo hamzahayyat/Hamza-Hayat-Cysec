@@ -10,10 +10,10 @@
 }
 
 .navbar.scrolled {
-  background: rgba(5, 5, 5, 0.95);
+  background: var(--nav-bg);
   backdrop-filter: blur(10px);
   padding: 1rem 0;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .nav-container {
@@ -28,7 +28,7 @@
   gap: 0.5rem;
   font-size: 1.2rem;
   font-weight: 700;
-  color: white;
+  color: var(--text-main);
   text-decoration: none;
 }
 
@@ -52,13 +52,75 @@
 }
 
 .nav-links li a:hover {
-  color: white;
+  color: var(--text-main);
+}
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.theme-toggle-slider {
+  width: 50px;
+  height: 26px;
+  border-radius: 30px;
+  background: var(--surface-color-light);
+  border: 1px solid var(--border-color);
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  transition: background 0.3s ease;
+}
+
+.theme-toggle-slider.dark {
+  background: rgba(20, 20, 20, 0.8);
+  border-color: rgba(255, 26, 26, 0.3);
+}
+
+.theme-toggle-slider.light {
+  background: #e0e0e0;
+}
+
+.slider-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--text-main);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: left 0.3s ease, background 0.3s ease;
+}
+
+.theme-toggle-slider.dark .slider-circle {
+  left: 3px;
+  background: var(--primary-red);
+  box-shadow: 0 0 5px var(--primary-red-glow);
+}
+
+.theme-toggle-slider.light .slider-circle {
+  left: 25px;
+  background: #ffffff;
+}
+
+.theme-toggle-slider.light .icon-sun {
+  color: #ff9800;
+}
+
+.theme-toggle-slider.dark .icon-moon {
+  color: #ffffff;
 }
 
 .nav-toggle {
   display: none;
   cursor: pointer;
-  color: white;
+  color: var(--text-main);
 }
 
 @media (max-width: 768px) {
@@ -74,7 +136,7 @@
     background: var(--surface-color);
     flex-direction: column;
     padding: 2rem 0;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid var(--border-subtle);
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     transition: clip-path 0.3s ease;
   }

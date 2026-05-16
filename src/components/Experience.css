@@ -58,7 +58,7 @@
 }
 
 .exp-header h3 {
-  color: white;
+  color: var(--text-main);
   margin: 0;
   font-size: 1.2rem;
 }
@@ -105,7 +105,7 @@
   grid-template-rows: 1fr;
   margin-top: 1rem;
   padding-top: 1rem;
-  border-top: 1px solid rgba(255,255,255,0.05);
+  border-top: 1px solid var(--border-subtle);
 }
 
 .expandable-inner {

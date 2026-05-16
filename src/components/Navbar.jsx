@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Shield, Menu, X } from 'lucide-react';
+import { Shield, Menu, X, Moon, Sun } from 'lucide-react';
 import './Navbar.css';
 
-const Navbar = () => {
+const Navbar = ({ theme, toggleTheme }) => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
@@ -28,8 +28,16 @@ const Navbar = () => {
           <span>HamzaHayat.Cysec</span>
         </Link>
         
-        <div className="nav-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-          {menuOpen ? <X size={24} /> : <Menu size={24} />}
+        <div className="nav-controls">
+          <button className={`theme-toggle-slider ${theme === 'light' ? 'light' : 'dark'}`} onClick={toggleTheme} aria-label="Toggle theme">
+            <div className="slider-circle">
+              {theme === 'dark' ? <Moon size={14} className="icon-moon" /> : <Sun size={14} className="icon-sun" />}
+            </div>
+          </button>
+          
+          <div className="nav-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+            {menuOpen ? <X size={24} /> : <Menu size={24} />}
+          </div>
         </div>
 
         <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
