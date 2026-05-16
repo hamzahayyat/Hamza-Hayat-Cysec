@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { personalInfo } from '../data';
 import { Lock, Server, ShieldAlert } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -6,6 +6,24 @@ import profileImg from '../assets/profile.png';
 import './Hero.css';
 
 const Hero = () => {
+  const [displayedText, setDisplayedText] = useState('');
+  const fullText = personalInfo.summary;
+
+  useEffect(() => {
+    let i = 0;
+    const typingInterval = setInterval(() => {
+      if (i < fullText.length) {
+        // Use functional state update to avoid missing characters in strict mode
+        setDisplayedText(fullText.substring(0, i + 1));
+        i++;
+      } else {
+        clearInterval(typingInterval);
+      }
+    }, 10); // 10ms per character typing speed
+    
+    return () => clearInterval(typingInterval);
+  }, [fullText]);
+
   return (
     <section className="hero" id="about">
       <div className="container hero-container" style={{ position: 'relative', zIndex: 10 }}>
@@ -29,7 +47,11 @@ const Hero = () => {
           </div>
           
           <h2 className="hero-subtitle">{personalInfo.title}</h2>
-          <p className="hero-desc">{personalInfo.summary}</p>
+          <div className="hero-desc console-typing">
+            <span className="console-prompt">root@system:~$</span>
+            <span className="typing-text"> {displayedText}</span>
+            <span className="console-cursor">█</span>
+          </div>
           <div className="hero-actions">
             <Link to="/contact" className="glow-btn">Engage Security</Link>
             <Link to="/projects" className="glow-btn-outline">View Operations</Link>
